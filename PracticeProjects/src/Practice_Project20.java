@@ -1,9 +1,10 @@
 //abstarct class
-	abstract class Display {
+abstract class Display {
 		abstract void dis();
 	}
+//inheritance
 public class Practice_Project20 extends Display{
-	//inheritance
+	
 	public void dis() {
 			System.out.println("This is abstract method");
 	}
