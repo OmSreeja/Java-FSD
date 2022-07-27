@@ -1,9 +1,8 @@
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-public class Pratice_Project19 {
+public class Practice_Project19 {
 	public static void main(String args[]) throws IOException
 	{
 		File myFile=new File("myfile.txt");
