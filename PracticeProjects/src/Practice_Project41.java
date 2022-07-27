@@ -1,85 +1,120 @@
-import java.util.*;
-class Practice_Project41
-{
-    /* This function takes last element as pivot,
-       places the pivot element at its correct
-       position in sorted array, and places all
-       smaller (smaller than pivot) to left of
-       pivot and all greater elements to right
-       of pivot */
-    int partition(int arr[], int low, int high)
-    {
-        int pivot = arr[high];
-        int i = (low-1); // index of smaller element
-        for (int j=low; j<high; j++)
-        {
-            // If current element is smaller than or
-            // equal to pivot
-            if (arr[j] <= pivot)
-            {
-                i++;
- 
-                // swap arr[i] and arr[j]
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
- 
-        // swap arr[i+1] and arr[high] (or pivot)
-        int temp = arr[i+1];
-        arr[i+1] = arr[high];
-        arr[high] = temp;
- 
-        return i+1;
-    }
- 
- 
-    /* The main function that implements QuickSort()
-      arr[] --> Array to be sorted,
-      low  --> Starting index,
-      high  --> Ending index */
-    void sort(int arr[], int low, int high)
-    {
-        if (low < high)
-        {
-            /* pi is partitioning index, arr[pi] is
-              now at right place */
-            int pi = partition(arr, low, high);
- 
-            // Recursively sort elements before
-            // partition and after partition
-            sort(arr, low, pi-1);
-            sort(arr, pi+1, high);
-        }
-    }
- 
-    /* A utility function to print array of size n */
-    static void printArray(int arr[])
-    {
-        int n = arr.length;
-        for (int i=0; i<n; ++i)
-            System.out.print(arr[i]+" ");
-        System.out.println();
-    }
- 
-    // Driver program
-    public static void main(String args[])
-    {
-    	Scanner sc=new Scanner(System.in);
-    	System.out.println("enter the size");
-    	int n=sc.nextInt();
-    	int arr[]=new int[n]; 
-    	System.out.println("Enter array elements");
-        for(int i=0;i<n;i++) {
-        	arr[i]=sc.nextInt();
-        }
 
- 
-        Practice_Project41 ob = new Practice_Project41();
-        ob.sort(arr, 0, n-1);
- 
-        System.out.println("sorted array");
-        printArray(arr);
-    }
-}
+
+	import java.util.ArrayList;
+	import java.util.Scanner;
+	import java.util.*;
+
+	public class Practice_Project41 {
+
+	    public static void main(String[] args) {
+	        /*System.out.println("Hello World!");*/
+	        System.out.println("\n**************************************\n");
+	        System.out.println("\tWelcome to TheDesk \n");
+	        System.out.println("**************************************");
+	        optionsSelection();
+
+	    }
+	    private static void optionsSelection() {
+	        String[] arr = {"1. I wish to review my expenditure",
+	                "2. I wish to add my expenditure",
+	                "3. I wish to delete my expenditure",
+	                "4. I wish to sort the expenditures",
+	                "5. I wish to search for a particular expenditure",
+	                "6. Close the application"
+	        };
+	        int[] arr1 = {1,2,3,4,5,6};
+	        int  slen = arr1.length;
+	        for(int i=0; i<slen;i++){
+	            System.out.println(arr[i]);
+	            // display the all the Strings mentioned in the String array
+	        }
+	        ArrayList<Integer> arrlist = new ArrayList<Integer>();
+	        ArrayList<Integer> expenses = new ArrayList<Integer>();
+	        expenses.add(1000);
+	        expenses.add(2300);
+	        expenses.add(45000);
+	        expenses.add(32000);
+	        expenses.add(110);
+	        expenses.addAll(arrlist);
+	        System.out.println("\nEnter your choice:\t");
+	        Scanner sc = new Scanner(System.in);
+	        int  options =  sc.nextInt();
+	        for(int j=1;j<=slen;j++){
+	            if(options==j){
+	                switch (options){
+	                    case 1:
+	                        System.out.println("Your saved expenses are listed below: \n");
+	                        System.out.println(expenses+"\n");
+	                        optionsSelection();
+	                        break;
+	                    case 2:
+	                        System.out.println("Enter the value to add your Expense: \n");
+	                        int value = sc.nextInt();
+	                        expenses.add(value);
+	                        System.out.println("Your value is updated\n");
+	                        expenses.addAll(arrlist);
+	                        System.out.println(expenses+"\n");
+	                        optionsSelection();
+
+	                        break;
+	                    case 3:
+	                        System.out.println("You are about the delete all your expenses! \nConfirm again by selecting the same option...\n");
+	                        int con_choice = sc.nextInt();
+	                        if(con_choice==options){
+	                               expenses.clear();
+	                            System.out.println(expenses+"\n");
+	                            System.out.println("All your expenses are erased!\n");
+	                        } else {
+	                            System.out.println("Oops... try again!");
+	                        }
+	                        optionsSelection();
+	                        break;
+	                    case 4:
+	                        sortExpenses(expenses);
+	                        optionsSelection();
+	                        break;
+	                    case 5:
+	                        searchExpenses(expenses);
+	                        optionsSelection();
+	                        break;
+	                    case 6:
+	                        closeApp();
+	                        break;
+	                    default:
+	                        System.out.println("You have made an invalid choice!");
+	                        break;
+	                }
+	            }
+	        }
+
+	    }
+	    private static void closeApp() {
+	        System.out.println("Closing your application... \nThank you!");
+	            }
+	    private static void searchExpenses(ArrayList<Integer> arrayList) {
+	        int leng = arrayList.size();
+	        System.out.println("Enter the expense you need to search:\t");
+	      //Complete the method
+	        Scanner sc=new Scanner(System.in);
+	        int s=sc.nextInt();
+	        int f=0;
+	        for(int i=0;i<leng;i++) {
+	        	if(s==arrayList.get(i)) {
+	        		f=1;
+	        		break;
+	        	}
+	        }
+	        if(f==1) {
+	        	System.out.println("expenses found");
+	        }
+	        else {
+	        	System.out.println("expenses not found");
+	        }
+	     }
+	    private static void sortExpenses(ArrayList<Integer> arrayList) {
+	        int arrlength =  arrayList.size();
+	       //Complete the method. The expenses should be sorted in ascending order.
+	        Collections.sort(arrayList);
+	        System.out.println("expenses in ascending order are"+arrayList);
+	    }
+	}

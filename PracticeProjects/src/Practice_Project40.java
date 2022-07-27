@@ -1,81 +1,51 @@
-import java.util.Scanner;
-
-public class Practice_Project40
+import java.util.*;
+class Practice_Project40
 {
-    // Merges two subarrays of arr[].
-    // First subarray is arr[l..m]
-    // Second subarray is arr[m+1..r]
-    void merge(int arr[], int l, int m, int r)
+    
+    int partition(int arr[], int low, int high)
     {
-        // Find sizes of two subarrays to be merged
-        int n1 = m - l + 1;
-        int n2 = r - m;
- 
-        /* Create temp arrays */
-        int L[] = new int [n1];
-        int R[] = new int [n2];
- 
-        /*Copy data to temp arrays*/
-        for (int i=0; i<n1; ++i)
-            L[i] = arr[l + i];
-        for (int j=0; j<n2; ++j)
-            R[j] = arr[m + 1+ j];
- 
- 
-        /* Merge the temp arrays */
- 
-        // Initial indexes of first and second subarrays
-        int i = 0, j = 0;
- 
-        // Initial index of merged subarray array
-        int k = l;
-        while (i < n1 && j < n2)
+        int pivot = arr[high];
+        int i = (low-1); // index of smaller element
+        for (int j=low; j<high; j++)
         {
-            if (L[i] <= R[j])
+            // If current element is smaller than or
+            // equal to pivot
+            if (arr[j] <= pivot)
             {
-                arr[k] = L[i];
                 i++;
+ 
+                // swap arr[i] and arr[j]
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
-            else
-            {
-                arr[k] = R[j];
-                j++;
-            }
-            k++;
         }
  
-        /* Copy remaining elements of L[] if any */
-        while (i < n1)
-        {
-            arr[k] = L[i];
-            i++;
-            k++;
-        }
+        // swap arr[i+1] and arr[high] (or pivot)
+        int temp = arr[i+1];
+        arr[i+1] = arr[high];
+        arr[high] = temp;
  
-        /* Copy remaining elements of R[] if any */
-        while (j < n2)
-        {
-            arr[k] = R[j];
-            j++;
-            k++;
-        }
+        return i+1;
     }
  
-    // Main function that sorts arr[l..r] using
-    // merge()
-    void sort(int arr[], int l, int r)
+ 
+    /* The main function that implements QuickSort()
+      arr[] --> Array to be sorted,
+      low  --> Starting index,
+      high  --> Ending index */
+    void sort(int arr[], int low, int high)
     {
-        if (l < r)
+        if (low < high)
         {
-            // Find the middle point
-            int m = (l+r)/2;
+            /* pi is partitioning index, arr[pi] is
+              now at right place */
+            int pi = partition(arr, low, high);
  
-            // Sort first and second halves
-            sort(arr, l, m);
-            sort(arr , m+1, r);
- 
-            // Merge the sorted halves
-            merge(arr, l, m, r);
+            // Recursively sort elements before
+            // partition and after partition
+            sort(arr, low, pi-1);
+            sort(arr, pi+1, high);
         }
     }
  
@@ -84,11 +54,11 @@ public class Practice_Project40
     {
         int n = arr.length;
         for (int i=0; i<n; ++i)
-            System.out.print(arr[i] + " ");
+            System.out.print(arr[i]+" ");
         System.out.println();
     }
  
-    // Driver method
+    // Driver program
     public static void main(String args[])
     {
     	Scanner sc=new Scanner(System.in);
@@ -99,14 +69,12 @@ public class Practice_Project40
         for(int i=0;i<n;i++) {
         	arr[i]=sc.nextInt();
         }
- 
-        System.out.println("Given Array");
-        printArray(arr);
+
  
         Practice_Project40 ob = new Practice_Project40();
-        ob.sort(arr, 0, arr.length-1);
+        ob.sort(arr, 0, n-1);
  
-        System.out.println("\nSorted array");
+        System.out.println("sorted array");
         printArray(arr);
     }
 }

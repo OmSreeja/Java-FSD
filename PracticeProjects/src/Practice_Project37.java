@@ -1,40 +1,43 @@
 import java.util.*;
 public class Practice_Project37 {  
-    public static void selectionSort(int[] arr){  
-        for (int i = 0; i < arr.length - 1; i++)  
-        {  
-            int index = i;  
-            for (int j = i + 1; j < arr.length; j++){  
-                if (arr[j] < arr[index]){  
-                    index = j;//searching for lowest index  
-                }  
-            }  
-            int smallerNumber = arr[index];   
-            arr[index] = arr[i];  
-            arr[i] = smallerNumber;  
-        }  
+    static void bubbleSort(int[] arr) {  
+        int n = arr.length;  
+        int temp = 0;  
+         for(int i=0; i < n; i++){  
+                 for(int j=1; j < (n-i); j++){  
+                          if(arr[j-1] > arr[j]){  
+                                 //swap elements  
+                                 temp = arr[j-1];  
+                                 arr[j-1] = arr[j];  
+                                 arr[j] = temp;  
+                         }  
+                          
+                 }  
+         }  
+  
     }  
-       
-    public static void main(String a[]){ 
+    public static void main(String[] args) {  
     	Scanner sc=new Scanner(System.in);
     	System.out.println("enter the size");
     	int n=sc.nextInt();
-    	int arr1[]=new int[n]; 
+    	int arr[]=new int[n]; 
     	System.out.println("Enter array elements");
         for(int i=0;i<n;i++) {
-        	arr1[i]=sc.nextInt();
+        	arr[i]=sc.nextInt();
         }
-        System.out.println("Before Selection Sort");  
-        for(int i:arr1){  
-            System.out.print(i+" ");  
+                 
+                System.out.println("Array Before Bubble Sort");  
+                for(int i=0; i < arr.length; i++){  
+                        System.out.print(arr[i] + " ");  
+                }  
+                System.out.println();  
+                  
+                bubbleSort(arr);//sorting array elements using bubble sort  
+                 
+                System.out.println("Array After Bubble Sort");  
+                for(int i=0; i < arr.length; i++){  
+                        System.out.print(arr[i] + " ");  
+                }  
+   
         }  
-        System.out.println();  
-          
-        selectionSort(arr1);//sorting array using selection sort  
-         
-        System.out.println("After Selection Sort");  
-        for(int i:arr1){  
-            System.out.print(i+" ");  
-        }  
-    }  
 }  

@@ -1,7 +1,7 @@
 
 import java.util.Arrays;
   
-class Practice_Project36
+public class Practice_Project35
 {
       
     static int exponentialSearch(int arr[],
