@@ -5,7 +5,7 @@ public class Practice_Project10 {
     	Scanner sc=new Scanner(System.in);
     	System.out.println("Enter the number of elements");
     	int n=sc.nextInt();
-    	//Declaring an array3
+    	//Declaring an array
     	int[] arr=new int[n];
     	System.out.println("Input elements to the array");
     	for(int i=0;i<n;i++)

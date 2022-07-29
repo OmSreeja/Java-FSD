@@ -8,6 +8,7 @@ public class Practice_Project9{
 		System.out.println("length of string s is :"+s.length());
 		System.out.println("UpperCase of string s is :"+s.toUpperCase());
 		String s1="Hello";
+		
 		String s2="Hello";
 		//comapring of two strings s1 and s2
 		System.out.println("string comparison :"+s1.compareTo(s2));

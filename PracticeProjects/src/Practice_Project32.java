@@ -2,40 +2,26 @@ import java.util.*;
 public class  Practice_Project32
 {
     // function lis 
-    public int[] lis(int[] a)
-    {        
-        int n = a.length - 1;
-        int[] M = new int[n + 1];  
-        int[] P = new int[n + 1]; 
-        int L = 0;
-        for (int i = 1; i < n + 1; i++)
-        {
-            int j = 0;
-            for (int pos = L ; pos >= 1; pos--)
-            {
-                if (a[M[pos]] < a[i])
-                {
-                    j = pos;
-                    break;
-                }
-            }            
-            P[i] = M[j];
-            if (j == L || a[i] < a[M[j + 1]])
-            {
-                M[j + 1] = i;
-                L = Math.max(L,j + 1);
-            }
-        }
- 
-        // backtrack 
-        int[] result = new int[L];
-        int pos = M[L];
-        for (int i = L - 1; i >= 0; i--)
-        {
-            result[i] = a[pos];
-            pos = P[pos];
-        }
-        return result;             
+    public int lis(int[] a,int n)
+    {    
+    	int max=0;
+    	int lis[]=new int[n];
+    	lis[0]=1;
+    	for(int i=1;i<n;i++) {
+    		lis[i]=1;
+    		for(int j=0;j<i;j++) {
+    			if(a[i]>a[j]&&lis[i]<=lis[j]) {
+    				lis[i]=lis[j]+1;
+    			}
+    		}
+    	}
+    	for(int i=0;i<n;i++) {
+    		if(max<lis[i]) {
+    			max=lis[i];
+    		}
+    	}
+    	return max;
+                   
     }
     public static void main(String[] args) 
     {    
@@ -48,10 +34,10 @@ public class  Practice_Project32
         for (int i = 1; i <= n; i++)
             arr[i] = scan.nextInt();
         Practice_Project32 obj = new Practice_Project32(); 
-        int[] result = obj.lis(arr);       
-        System.out.print("\nLongest Increasing Subsequence is : ");
-        for (int i = 0; i < result.length; i++)
-            System.out.print(result[i] +" ");
+        //int[] result = obj.lis(arr,n);       
+        System.out.print("\nLongest Increasing Subsequence is : "+obj.lis(arr,n));
+        //for (int i = 0; i < result.length; i++)
+           // System.out.print(result[i] +" ");
         System.out.println();
     }
 }

@@ -2,63 +2,35 @@ import java.util.*;
 class Practice_Project40
 {
     
-    int partition(int arr[], int low, int high)
+    void partition(int arr[], int low, int high)
     {
-        int pivot = arr[high];
-        int i = (low-1); // index of smaller element
-        for (int j=low; j<high; j++)
-        {
-            // If current element is smaller than or
-            // equal to pivot
-            if (arr[j] <= pivot)
-            {
-                i++;
- 
-                // swap arr[i] and arr[j]
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
- 
-        // swap arr[i+1] and arr[high] (or pivot)
-        int temp = arr[i+1];
-        arr[i+1] = arr[high];
-        arr[high] = temp;
- 
-        return i+1;
+    	int mid=low+(high-low)/2;
+    	int pivot=arr[mid];
+    	int i=low;
+    	int j=high;
+    	while(i<=j) {
+    		while(arr[i]<pivot)
+    			i++;
+    		while(arr[j]>pivot)
+    			j--;
+    		if(i<=j) {
+    			int temp=arr[i];
+    			arr[i]=arr[j];
+    			arr[j]=temp;
+    			i++;
+    			j--;
+    		}
+    	}
+    	if(low<j) {
+    		partition(arr,low,j);	
+    	}
+    		
+    	if(i>high) {
+    		partition(arr,i,high);
+    	}
     }
- 
- 
-    /* The main function that implements QuickSort()
-      arr[] --> Array to be sorted,
-      low  --> Starting index,
-      high  --> Ending index */
-    void sort(int arr[], int low, int high)
-    {
-        if (low < high)
-        {
-            /* pi is partitioning index, arr[pi] is
-              now at right place */
-            int pi = partition(arr, low, high);
- 
-            // Recursively sort elements before
-            // partition and after partition
-            sort(arr, low, pi-1);
-            sort(arr, pi+1, high);
-        }
-    }
- 
-    /* A utility function to print array of size n */
-    static void printArray(int arr[])
-    {
-        int n = arr.length;
-        for (int i=0; i<n; ++i)
-            System.out.print(arr[i]+" ");
-        System.out.println();
-    }
- 
-    // Driver program
+    		
+            // Driver program
     public static void main(String args[])
     {
     	Scanner sc=new Scanner(System.in);
@@ -72,9 +44,12 @@ class Practice_Project40
 
  
         Practice_Project40 ob = new Practice_Project40();
-        ob.sort(arr, 0, n-1);
- 
+        ob.partition(arr, 0, n-1);
         System.out.println("sorted array");
-        printArray(arr);
+       for(int i=0;i<n;i++) {
+    	   System.out.println(arr[i] +"\t");
+       }
+        //System.out.println("sorted array"+arr);
+       
     }
 }

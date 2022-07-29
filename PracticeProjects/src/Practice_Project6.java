@@ -45,10 +45,10 @@ public class Practice_Project6 {
 	       System.out.println("\n");
 	       System.out.println("LinkedHashSet");
 	       LinkedHashSet<Integer> lhset=new LinkedHashSet<Integer>();  
-	       lhset.add(2);  
+	       lhset.add(4);  
 	       lhset.add(3);  
 	       lhset.add(2);
-	       lhset.add(4);	       
+	       lhset.add(2);	       
 	       System.out.println(lhset);
 	  }
 }

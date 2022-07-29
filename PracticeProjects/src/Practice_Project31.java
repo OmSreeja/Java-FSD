@@ -26,9 +26,9 @@ public class Practice_Project31
       return;  
     }  
     if(rear == maxSize - 1)  
-{  
-      rear = -1;  
-    }  
+	{  
+	      rear = -1;  
+	 }  
     /* increment rear then insert element to queue */  
     queueArray[++rear] = item;  
     currentSize++;  
