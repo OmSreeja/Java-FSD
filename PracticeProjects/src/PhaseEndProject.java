@@ -13,12 +13,12 @@ public class PhaseEndProject
         		System.out.println("**************************************");
         		while(true)
 		{
-			System.out.println("1.Want to sort the files in ascending order\n");
-            			System.out.println("2. Want to perform business operations on file \n");
+			System.out.println("1. Want to sort the files\n");
+            			System.out.println("2. Want to Perform business operations on file  \n");
             			System.out.println("3. Close the Application");
-            			System.out.println("*****Enter the option you want to do*****  \n");
-			int option = scan.nextInt();
-            			switch(option)
+            			System.out.println("*****What option do you want to go with*****  \n");
+			int choice = scan.nextInt();
+            			switch(choice)
             			{
                 				case 1:sortFiles();
 					break;
@@ -26,13 +26,13 @@ public class PhaseEndProject
                     					Boolean temp = true;
                     					while(temp) 
 						{
-                        						System.out.println("Option 1 :- To Add a file ");
-                        						System.out.println("Option 2 :- To Delete a file from the existing files ");
+                        						System.out.println("Option 1 :- To Add a file");
+                        						System.out.println("Option 2 :- To Delete a file from existing files");
                         						System.out.println("Option 3 :- To Search a user specified file from ");
                         						System.out.println("Option 4 :- Navigate to main menu");
                         						System.out.println("Option 5 :- Close the Application");
-							int option2 = scan.nextInt();
-							switch (option2) 
+							int choice2 = scan.nextInt();
+							switch (choice2) 
 							{
                             							case 1:
 									newFile();
@@ -48,18 +48,18 @@ public class PhaseEndProject
                                 								break;
 
                             							case 5:
-									System.out.println("*********Application Closed Successfully***********");
+									System.out.println("*********Program Terminated Successfully***********");
                                 								System.exit(0);
                            							default:
-                                								System.out.println("please choose correct option");
+                                								System.out.println("Input correct value and retry");
 							}
 						}
                     					break;
 				case 3:
-                    				System.out.println("*********Application Closed Successfully***********");
+                    				System.out.println("*********Program Terminated Successfully***********");
                     				System.exit(0);
 				default:
-                    				System.out.println("please choose correct option ");
+                    				System.out.println("Input correct value and retry");
                     				break;
 			}
 		}
@@ -94,7 +94,7 @@ public class PhaseEndProject
 		String strName = "";
 		try
 		{
-			File directory = new File("C:\\javafsd\\javademos\\PracticeProjects\\Files");
+			File directory = new File("C:/Users/pathu/user defined files/");
  			String[] flist = directory.list()	;
 			int flag = 0;
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -113,7 +113,6 @@ public class PhaseEndProject
 					{
                     					System.out.println(filename + " found");
                     					flag = 1;
-                    					break;
                 					}
             				}
         			}
@@ -133,7 +132,7 @@ public class PhaseEndProject
 		String strPath = "", strName = "";
 		try
 		{
-			File directory = new File("C:\\javafsd\\javademos\\PracticeProjects\\Files");
+			File directory = new File("C:/Users/pathu/user defined files/");
  			String[] flist = directory.list();
     			for(int i=0;i<flist.length;i++)
 			{
