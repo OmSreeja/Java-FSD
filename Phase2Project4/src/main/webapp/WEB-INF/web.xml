@@ -9,4 +9,34 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>Project4</display-name>
+    <servlet-name>Project4</servlet-name>
+    <servlet-class>com.Project4</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Project4</servlet-name>
+    <url-pattern>/Project4</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Ph2Project4</display-name>
+    <servlet-name>Ph2Project4</servlet-name>
+    <servlet-class>com.Project4</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Ph2Project4</servlet-name>
+    <url-pattern>/Ph2Project4</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Phs2Project4</display-name>
+    <servlet-name>Phs2Project4</servlet-name>
+    <servlet-class>com.Phs2Project4</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Phs2Project4</servlet-name>
+    <url-pattern>/Phs2Project4</url-pattern>
+  </servlet-mapping>
 </web-app>
