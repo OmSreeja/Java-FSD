@@ -1,0 +1,25 @@
+<!--<p>tdf-login-page works!</p>-->
+<div>
+    <h2>login page using template driven form</h2>
+    <form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)">
+        <label>EmailId</label>
+        <input type="email" name="email" ngModel required minlength="0" pattern="[a-z,0-9]+@[a-z,0-9]+.com"/>
+        <div *ngIf="loginRef.controls['email']?.invalid && (loginRef.controls['email']?.touched)">
+            <span [hidden]="!loginRef.controls['email'].hasError('required')" style="color: red;">UserName is required</span>
+            <span [hidden]="!loginRef.controls['email'].hasError('minlength')" style="color: red;">UserName mutbe 3 characters </span>
+            <span [hidden]="!loginRef.controls['email'].hasError('pattern')" style="color: red;">UserName must follow pattern </span>
+        </div>
+        <br>
+        <label>password</label>
+        <input type="password" name="pass" ngModel required/>
+        <div *ngIf="loginRef.controls['pass']?.invalid && (loginRef.controls['pass']?.touched)">
+            <span style="color: red;">password is required</span>
+        </div>
+        <br>
+        <input type="submit" value="submit" [disabled]="loginRef.invalid"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <br>
+    <span style="color:red">{{msg}}</span>
+
+</div>

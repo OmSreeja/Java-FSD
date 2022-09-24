@@ -1,0 +1,30 @@
+<div>
+    <h2 align="center" ><i>Enter Employee Details to Store</i></h2><br>
+    <form [formGroup]="empRef" (ngSubmit)="addEmployee()">
+        <label>Id:</label> &nbsp;<input type="number" placeholder="Enter Employee Id" formControlName="id"/>
+        <label>FirstName:</label>&nbsp;<input type="text" placeholder="Enter FirstName" formControlName="first_name"/>
+        <label>LastName:</label>&nbsp;<input type="text" placeholder="Enter LastName" formControlName="last_name"/>
+        <label>Email:</label>&nbsp;<input type="text" placeholder="Enter Email" formControlName="email"/>
+        <input type="submit" class="btn btn-success"value="Add Employee" />
+    </form>
+<table border="1" class="table" >
+    <thead>
+    <tr>
+    <th class="table-primary">ID</th>
+    <th class="table-danger">FirstName</th>
+    <th class="table-secondary">LastName</th>
+    <th class="table-success">Email</th>
+    <th class="table-info">View Details</th>
+</tr>
+</thead>
+<tbody>
+   <tr *ngFor="let employee of employees">
+      <td class="table-danger">{{employee.id}}</td>
+      <td class="table-primary">{{employee.first_name}}</td>
+      <td class="table-info">{{employee.last_name}}</td>
+      <td class="table-warning">{{employee.email}}</td>
+      <td class="table-success"><input type="button" class="btn btn-secondary" value="View Details" (click)="viewDetails(employee)" ></td>
+   </tr>
+</tbody>
+</table>
+</div>

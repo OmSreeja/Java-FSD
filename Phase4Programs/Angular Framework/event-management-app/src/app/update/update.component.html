@@ -1,0 +1,9 @@
+<div class="text-center">
+    <form [formGroup]="employeeeditRef" (ngSubmit)="updateemployee()" >
+            <label >FirstName:</label>&nbsp;<input type="text" placeholder="Enter your First name" formControlName="first_name" >
+            <label>LastName:</label>&nbsp;<input type="text" placeholder="Enter your last name" formControlName="last_name" >
+            <label>Email:</label>&nbsp;<input type="text" placeholder="Enter your Email Id " formControlName="email" ><br><br>
+             <input type="submit" class="btn btn-success"  value="update employee" >
+    </form>
+</div>
+

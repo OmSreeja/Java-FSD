@@ -1,0 +1,22 @@
+<!--<p>mdf-login-page works!</p>-->
+<div>
+    <h2>login page using model driven form</h2>
+    <form [formGroup]="loginRef" (ngSubmit)="checkUser()">
+    <label>Emailid</label>
+    <input formControlName="email"/>
+    <div *ngIf="loginRef.controls['email']?.invalid && (loginRef.controls['email']?.touched)">
+        
+    </div>
+    <br>
+    <label>Password</label>
+    <input formControlName="pass"/>
+    <div *ngIf="loginRef.controls['pass']?.invalid && (loginRef.controls['pass']?.touched)">
+        <span style="color: red;">UserName is required</span>
+    </div>
+    <br>
+    <input type="submit" value="submit" [disabled]="loginRef.invalid"/>
+    <input type="reset" value="reset"/>
+</form>
+<br>
+<span style="color:red">{{msg}}</span>
+</div>

@@ -1,0 +1,16 @@
+<!--<p>property-binding works!</p>-->>
+<div>
+    <h2>one way binding using proprty binding</h2>
+    <input type="text"/><br/>
+    <input type="text" value="sree"/><br>
+    <input type="text" value="lname"/><br>
+    <input type="text" [value]="lname"/>
+    <p innerText="lname"></p>
+    <p [innerText]="lname"></p>
+    {{lname}} <span [innerText]="lname"></span><br>
+    <input type="button" value="click here"/><br>
+    <input type="button" value="clickhere" disabled/><br>
+    <input type="button" value="clickhere" disabled="abc"/><br>
+    <input type="button" value="string interpolation" disabled="{{f1}}"/><br>
+    <input type="button" value="property biding" [disabled]="f1"/>
+</div>

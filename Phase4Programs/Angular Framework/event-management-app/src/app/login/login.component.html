@@ -1,0 +1,13 @@
+<div>
+    <form align="center" [formGroup]="loginRef" (ngSubmit)="checkUser()">
+        <label>EmailId</label>
+        <input type="email" formControlName="email"/><br>
+        <label>Password</label>
+        <input type="password" formControlName="pass"/><br>
+        <input type="submit" value="submit"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <br>
+    <span style="color:red">{{msg}}</span>
+    <br>
+</div>

@@ -1,0 +1,16 @@
+<div class="center" >
+    <h2 align="center">Employee Details</h2>
+    <p align="center">PId : {{employee.id}}</p>
+    <p align="center">FirstName : {{employee.first_name}}</p>
+    <p align="center">LastName :{{employee.last_name}}</p>
+    <p align="center">Email : {{employee.email}}</p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;
+    <input align-items="center" type="button" class="btn btn-primary" value="View All Product" (click)="ViewAll()"/>&nbsp;&nbsp;&nbsp;
+    <input align-text="center" type="button" class="btn btn-warning"value="Delete Product" (click)="deleteEmployee(employee.id)"/>&nbsp;&nbsp;&nbsp;
+   <a routerLink="/update/{{employee.id}}"> <input class="btn btn-success" type="button" value="Update"></a>
+</div>

@@ -1,0 +1,13 @@
+var a = 10;
+var fname = "sree";
+var result1 = true;
+var info = "welcome";
+info = false;
+info = 200;
+var b = 200;
+var lname = "mouni";
+var result2 = false;
+var id;
+var flname;
+console.log(a);
+console.log(fname);

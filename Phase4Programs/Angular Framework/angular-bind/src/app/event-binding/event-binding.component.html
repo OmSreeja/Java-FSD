@@ -1,0 +1,16 @@
+<!--<p>event-binding works!</p>-->
+<div>
+    <h2>one way data binding-using event binding</h2>
+    <input type="button" value="clickhere" (click)="fun()"/>
+    <br>
+    {{msg}} or <span [innerText]="msg"></span>
+    <br>
+    Name:<input type="text" #nameRef/>
+    <input type="button" value="Click here" (click)="passValue(nameRef)"/>
+    <br>
+    1stNumber:<input type="number" #n1/><br>
+    2ndNumber:<input type="number" #n2/><br>
+    <input type="button" value="Click here" (click)="add(n1,n2)"/>
+    <br>
+    {{result}}
+</div>

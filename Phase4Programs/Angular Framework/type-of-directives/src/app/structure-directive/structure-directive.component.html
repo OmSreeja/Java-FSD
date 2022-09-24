@@ -1,0 +1,46 @@
+<!--<p>structure-directive works!</p>-->
+<div>
+ <h2>Structure directive</h2>
+ <h4>*ngIf</h4>
+ <div>this is div tag</div>
+ <div *ngIf="true">this is div with true value</div>
+ <div *ngIf="false">this is div with false value</div>
+ <div *ngIf="f1">this is div with f1 true boolean value</div>
+ <div *ngIf="f2">this is div with f1 false boolean value</div>
+ <input type="button" value="display content" (click)="changeValue()"/>
+ <div *ngIf="f3">
+    <h2>welcome to angular training</h2>
+    <p>Today we are learning type of directives</p>
+ </div>
+ <input type="button" [value]="b1" (click)="toggle()"/>
+ <div *ngIf="f4">
+    Hello....
+ </div>
+ <hr>
+ <h4>*ngIf</h4>
+ <div>{{num1}}</div>
+ <h4>Display numbers one by one</h4>
+ <div *ngFor="let n of num1">{{n}}</div>
+ <h4>All names are</h4>
+    <ul>
+        <li *ngFor="let name of names">{{name}}</li>
+    </ul>
+<input type="number" #idRef placeholder="Enter Id"/>
+<input type="text" #nameRef placeholder="Enter Name"/>
+<input type="number" #salaryRef placeholder="Enter Salary"/>
+<input type="button" value="AddEmployee" (click)="addEmployeeDetails(idRef,nameRef,salaryRef)"/>
+<h3>Employee Details</h3>
+<table border="1">
+   <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Salary</th>
+   </tr>
+   <tr *ngFor="let employee of employees">
+      <td>{{employee.id}}</td>
+      <td>{{employee.name}}</td>
+      <td>{{employee.salary}}</td>
+   </tr>
+</table>
+</div>
+
