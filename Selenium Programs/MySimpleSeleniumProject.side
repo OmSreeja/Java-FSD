@@ -1,0 +1,160 @@
+{
+  "id": "720e0541-f52d-4186-b77c-b26781579428",
+  "version": "2.0",
+  "name": "MySimpleSeleniumProject",
+  "url": "http://127.0.0.1:5500/login.html",
+  "tests": [{
+    "id": "35a0091c-e62a-4ba0-8df9-0e9547df22bd",
+    "name": "LoginTest",
+    "commands": [{
+      "id": "a5f3b319-896b-47f9-ad75-ee40697b41aa",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ed26aa81-90c9-4a09-b5b2-aea0d546aaa0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "16c0a308-c245-4d0d-af4c-359c9928103a",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6e6f9881-7844-49ed-a9aa-e2878d891e48",
+      "comment": "",
+      "command": "click",
+      "target": "id=n1",
+      "targets": [
+        ["id=n1", "id"],
+        ["name=email", "name"],
+        ["css=#n1", "css:finder"],
+        ["xpath=//input[@id='n1']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "16c8465b-219d-48a3-b505-3ae1150f3f9e",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "plz enter email id",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "adadb53d-2293-4e8f-8def-b38faab41c33",
+      "comment": "",
+      "command": "type",
+      "target": "id=n1",
+      "targets": [
+        ["id=n1", "id"],
+        ["name=email", "name"],
+        ["css=#n1", "css:finder"],
+        ["xpath=//input[@id='n1']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "sreeja@gmail.com"
+    }, {
+      "id": "18dd221c-2df0-4303-a422-c93986679e13",
+      "comment": "",
+      "command": "click",
+      "target": "id=n2",
+      "targets": [
+        ["id=n2", "id"],
+        ["name=pass", "name"],
+        ["css=#n2", "css:finder"],
+        ["xpath=//input[@id='n2']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9189b031-7c58-408d-b757-e523b73abf0f",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "plz enter password",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e888dacf-d064-4cae-a838-79db124c99d5",
+      "comment": "",
+      "command": "type",
+      "target": "id=n2",
+      "targets": [
+        ["id=n2", "id"],
+        ["name=pass", "name"],
+        ["css=#n2", "css:finder"],
+        ["xpath=//input[@id='n2']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "123"
+    }, {
+      "id": "a7ac67dd-9561-4dc1-aa2a-f5230122e374",
+      "comment": "",
+      "command": "click",
+      "target": "id=n1",
+      "targets": [
+        ["id=n1", "id"],
+        ["name=email", "name"],
+        ["css=#n1", "css:finder"],
+        ["xpath=//input[@id='n1']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "330c0192-e972-418c-8d58-7dee096bdd65",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "failure try once again",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fdf83231-6821-4694-bfbd-dfb4589495d6",
+      "comment": "",
+      "command": "type",
+      "target": "id=n1",
+      "targets": [
+        ["id=n1", "id"],
+        ["name=email", "name"],
+        ["css=#n1", "css:finder"],
+        ["xpath=//input[@id='n1']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "sree@gmail.com"
+    }, {
+      "id": "56329d10-f7b4-444a-9bbb-3c8b81a46ed3",
+      "comment": "",
+      "command": "click",
+      "target": "id=b1",
+      "targets": [
+        ["id=b1", "id"],
+        ["css=#b1", "css:finder"],
+        ["xpath=//input[@id='b1']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d13d4eff-b715-4507-9855-0dcd8bf79874",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "successfully login",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "9ddf381c-e062-45c2-8ff1-be3c8decb2b0",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://127.0.0.1:5500/login.html"],
+  "plugins": []
+}

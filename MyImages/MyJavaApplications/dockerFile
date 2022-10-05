@@ -1,0 +1,4 @@
+FROM openjdk:11
+COPY demo.java .
+RUN javac demo.java
+CMD ["java","demo"]
